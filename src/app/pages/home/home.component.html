@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-12" *ngFor="let post of posts">
       <h2>{{ post.title.charAt(0).toUpperCase() + post.title.slice(1)}}</h2>
-      <a>Ver Autor</a>
+      <a [routerLink]="['/user', post.userId]">Ver Autor</a>
       <p>{{ post.body }}</p>
       <hr>
     </div>
