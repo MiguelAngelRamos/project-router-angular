@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  title = "{JSON} Placeholder";
   optsNavbar = [
-    {path: '/home', name: 'Home'},
-    {path: '/home', name: 'Users'},
+    {path: '/home', name: 'Home'}, //opt
+    {path: '/users', name: 'Users'},
     {path: '/photo', name: 'Photo'}
   ]
 
