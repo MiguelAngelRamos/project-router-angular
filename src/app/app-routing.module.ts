@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-
+// http://localhost:4200/
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full'}
