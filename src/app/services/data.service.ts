@@ -14,4 +14,9 @@ export class DataService {
   getPosts():Observable<IPost[]> {
     return this.http.get<IPost[]>('https://jsonplaceholder.typicode.com/posts');
   }
+
+  getUserById(idUser: number):Observable<any> {
+    return this.http.get<any>('https://jsonplaceholder.typicode.com/users/' + idUser);
+    // return this.http.get<any>(`https://jsonplaceholder.typicode.com/users/${idUser}`);
+  }
 }
