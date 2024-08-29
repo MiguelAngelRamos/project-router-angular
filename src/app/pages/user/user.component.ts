@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
+import { IUser } from '../../interfaces/IUser';
 
 @Component({
   selector: 'app-user',
@@ -8,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './user.component.css'
 })
 export class UserComponent implements OnInit {
+
+  user!: IUser;
   // http:localhost:4200/user/6
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) {}
 
@@ -16,6 +19,11 @@ export class UserComponent implements OnInit {
   }
 
   getUser() {
-    this.activatedRoute.paramMap.subscribe(console.log)
+    this.activatedRoute.paramMap.subscribe( params => {
+      let idUser:number = Number(params.get('id'));
+      // id = 6
+      // llamamos al servicio una vez que capturemos el id
+      this.dataService.getUserById(idUser).subscribe(dataUser => this.user = dataUser );
+    })
   }
 }
