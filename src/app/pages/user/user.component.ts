@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
   getUser() {
     this.activatedRoute.paramMap.subscribe( params => {
       let idUser:number = Number(params.get('id'));
+      //* '10' -> 10  'hola' -> NaN
       // id = 6
       // llamamos al servicio una vez que capturemos el id
       this.dataService.getUserById(idUser).subscribe(dataUser => this.user = dataUser );

@@ -20,4 +20,8 @@ export class DataService {
     return this.http.get<IUser>('https://jsonplaceholder.typicode.com/users/' + idUser);
     // return this.http.get<any>(`https://jsonplaceholder.typicode.com/users/${idUser}`);
   }
+
+  getUserAll():Observable<IUser[]> {
+    return this.http.get<IUser[]>('https://jsonplaceholder.typicode.com/users');
+  }
 }
