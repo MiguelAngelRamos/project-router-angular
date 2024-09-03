@@ -1,6 +1,6 @@
 <div class="container mt-5 col-sm-6 offset-sm-3">
-  <h1 class="text-center">Datos del Usuario</h1>
-    <table class="table">
+  <h1 class="text-center" *ngIf="user">Datos del Usuario</h1>
+    <table class="table" *ngIf="user; else templateEmpty">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -19,4 +19,11 @@
 
       </tbody>
     </table>
+
+    <ng-template #templateEmpty>
+      <div class="mt-5 text-center alert alert-danger" role="alert">
+        No existen usuarios para este ID
+      </div>
+   
+    </ng-template>
 </div>
