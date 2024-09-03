@@ -1,1 +1,24 @@
-<p>users works!</p>
+<div class="contaienr mt-5 col-sm-6 offset-sm-3">
+  <h3 class="fst-italic text-center"> Lista Usuarios</h3>
+
+  <table class="table" *ngIf="user; else templateEmpty">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>{{user.name}}</th>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address.street}} - {{ user.address.suite}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  
+</div>
